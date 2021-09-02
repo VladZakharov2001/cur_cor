@@ -15,13 +15,7 @@ const Currency = () => {
             const userGeoCurrency = await getBaseUserGeoCurrency();
             const allInfoCurrency = await getAllInfoAboutCurrency(fromNameCurrency);
             setAllCurrencies(allInfoCurrency);
-<<<<<<< HEAD
             setToNameCurrency(userGeoCurrency);
-=======
-            console.log({ allInfoCurrency })
-            setToNameCurrency(userGeoCurrency);
-            console.log({ userGeoCurrency })
->>>>>>> 7f59856dfb0e674145d77d9b298363605d534b7f
         })();
     }, []);
 
@@ -29,42 +23,16 @@ const Currency = () => {
         updateValue();
     }, [toNameCurrency, fromNameCurrency]);
     const getBaseUserGeoCurrency = async () => {
-        const v = (await (await (await fetch(constans.DEFAULT_URL)).json())).currencies[0].code;
-<<<<<<< HEAD
-        return v;
+        return (await (await (await fetch(constans.DEFAULT_URL)).json())).currencies[0].code;
     };
     const getAllInfoAboutCurrency = async (base) => {
-
-        const URL = `${constans.URL_API}${process.env.REACT_APP_API}/latest/${base}`;
-        const v2 = (await (await fetch(URL)).json()).conversion_rates;
-=======
-        console.log({ v });
-        return v;
-    };
-    const getAllInfoAboutCurrency = async (base) => {
-        console.log({ base })
-        const URL = `${constans.URL_API}${process.env.REACT_APP_API}/latest/${base}`;
-        const v2 = (await (await fetch(URL)).json()).conversion_rates;
-        console.log({ v2 })
->>>>>>> 7f59856dfb0e674145d77d9b298363605d534b7f
-        return v2;
+        return (await (await fetch(`${constans.URL_API}${process.env.REACT_APP_API}/latest/${base}`)).json()).conversion_rates;
     };
     const convertRates = async (selected, base) => {
-        const v3 = (await getAllInfoAboutCurrency(selected))[base];
-<<<<<<< HEAD
-=======
-        console.log({ selected })
-        console.log({ base })
-        console.log({ v3 })
->>>>>>> 7f59856dfb0e674145d77d9b298363605d534b7f
-        return v3;
+        return (await getAllInfoAboutCurrency(selected))[base];
     };
 
     const updateValue = async () => {
-<<<<<<< HEAD
-=======
-        console.log({ toNameCurrency })
->>>>>>> 7f59856dfb0e674145d77d9b298363605d534b7f
         const convertingValue = await convertRates(toNameCurrency, fromNameCurrency);
         setResultValue(convertingValue);
     };
