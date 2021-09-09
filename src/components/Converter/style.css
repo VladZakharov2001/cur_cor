@@ -1,0 +1,39 @@
+h1{
+    position: absolute;
+    top:100px;
+    left: 160px;
+    width: 800px;
+    height: 24px;
+    font-weight: bold;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: #000000;
+}
+.main_container{
+    margin-top: 150px;
+    margin-left: 400px;
+}
+.main_container_select{
+    display: flex;
+    margin-bottom: 15px;
+}
+.main_container_input{
+    display: flex;
+}
+.text{
+    position: relative;
+    right: 480px;
+    top:25px;
+}
+.text_interval{
+    margin: 10px;
+}
+.change_currency{
+ position: relative;
+ right: 20px;
+ top: 50px;
+ color: grey;
+ text-decoration: underline;
+}
